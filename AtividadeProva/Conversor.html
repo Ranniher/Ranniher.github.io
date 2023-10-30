@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Conversor de Moedas</title>
+    <style>
+        body {
+            font-family: #f0f8ff;
+        }
+
+        #conversor {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: green;
+        }
+
+        select,
+        input,
+        button {
+            margin-bottom: 10px;
+            width: 90%;
+            padding: 10px;
+        }
+
+        #resultado {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        dd {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conversor">
+        <h2>Conversor de Moedas</h2>
+        <label for="moeda">Selecione a moeda:</label>
+        <select id="moeda">
+            <option value="dolar">Dólar (USD)</option>
+            <option value="euro">Euro (EUR)</option>
+        </select>
+        <label for="valor">Digite o valor:</label>
+        <input type="number" id="valor" placeholder="Digite o valor">
+        <button onclick="converter()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function converter() {
+            const moedaSelecionada = document.getElementById("moeda").value;
+            const valor = parseFloat(document.getElementById("valor").value);
+
+            let taxaDeCambio = 0;
+            if (moedaSelecionada === "dolar") {
+                taxaDeCambio = 4.93;
+            } else if (moedaSelecionada === "euro") {
+                taxaDeCambio = 5.26;
+            }
+
+            const resultado = valor * taxaDeCambio;
+
+            document.getElementById("resultado").innerHTML = `Resultado em Reais (BRL): R$ ${resultado.toFixed(2)}`;
+        }
+    </script>
+</body>
+<br>
+<br>
+<dd><a href="3-Atividade.html" hreflang="pt-br" target="_self" rel="next">Voltar à pág 3-Atividade.</a></dd>
+
+</html>

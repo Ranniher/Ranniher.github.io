@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    body {
+        margin: 50px;
+
+    }
+
+    main {
+        background-color: lavender;
+        width: 46.9%;
+        height: 70%;
+        margin: 5px 0;
+        border: 1px solid red;
+        padding: 1px;
+        margin: auto;
+
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em
+    }
+    h1 {
+        text-align: center;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em
+    }
+
+    dd {
+        text-align: center;
+    }
+</style>
+
+
+
+<body>
+    <main>
+        <h1>Cáculadora</h1>
+        <input type="number" id="numero1">
+        <select id="operacao">
+            <option value="soma">+</option>
+            <option value="subtracao">-</option>
+            <option value="multiplicacao">*</option>
+            <option value="divisao">/</option>
+        </select>
+        <input type="number" id="numero2"> =
+        <input type="text" id="resultado" readonly><br>
+        <button id="calcular">Calcular</button>
+
+        <script>
+            $(document).ready(function () {
+                $("#calcular").on("click", function () {
+                    const operacao = $("#operacao").val();
+                    const numero1 = parseFloat($("#numero1").val());
+                    const numero2 = parseFloat($("#numero2").val());
+
+                    let resultado;
+
+                    if (isNaN(numero1) || isNaN(numero2)) {
+                        resultado = "Por favor, insira números válidos.";
+                    } else {
+                        switch (operacao) {
+                            case "soma":
+                                resultado = numero1 + numero2;
+                                break;
+                            case "subtracao":
+                                resultado = numero1 - numero2;
+                                break;
+                            case "multiplicacao":
+                                resultado = numero1 * numero2;
+                                break;
+                            case "divisao":
+                                if (numero2 !== 0) {
+                                    resultado = numero1 / numero2;
+                                } else {
+                                    resultado = "Divisão por zero não é permitida.";
+                                }
+                                break;
+                            default:
+                                resultado = "Operação não reconhecida.";
+                                break;
+                        }
+                    }
+
+                    $("#resultado").val(resultado);
+                });
+            });
+        </script>
+    </main>
+</body>
+<br>
+<br>
+<dd><a href="3-Atividade.html" hreflang="pt-br" target="_self" rel="next">Voltar à pág 3-Atividade.</a></dd>
+
+</html>

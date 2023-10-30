@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="2logoIFPA.png" type="TRabalho1ºbi">
+    <title>Cadastro de Aluno IFPA</title>
+
+    <style>
+        body {
+            margin: 5;
+
+        }
+
+
+        main {
+            background-color: #f0f8ff;
+            width: 500px;
+            height: 500px;
+            margin: 40px 0;
+            border: 4px solid black;
+            padding: 20px;
+            margin: auto;
+
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            color: red;
+            text-align: center;
+
+        }
+
+        .Enviar {
+            background-color: rgb(0, 140, 255);
+            border-color: white;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 20px;
+
+        }
+
+        .resetar {
+            background-color: red;
+            border-color: white;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 20px;
+
+        }
+    </style>
+    <title>Formulário</title>
+</head>
+
+<body>
+
+    <main>
+        <h2>Cadastro de Aluno - Matricula</h2>
+
+        <form name="Cadastro" action="">
+
+            <hr>
+            <label for="nome">Nome<span style="color:red;">*</span></label><br><input type="text" id="nome" size="40"
+                maxlength="40" required><br>
+            <font size="1" color="blue">Nome completo</font>
+            <p><label for="Email">Email<span style="color:red;">*</span></label><br><input type="email"
+                    required="required" class="input-text" name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" /><br>
+                <font size="1" color="blue">exemplo@exemplo.com</font>
+            </p>
+            <label for="telefone"> Telefone<br></label>
+            <input type="text" id="codigo" placeholder="DDD" size="2" maxlength="3" required="required">
+            <input type="text" id="telefone" placeholder="xxxxxxxx" id="telefone" size="6" maxlength="9"
+                required="required">
+            <br>
+            <font size="1" color="blue">Cód. de área</font>
+            <font size="1" color="blue"> Telefone</font>
+            </p>
+            <label for="disc">Disciplina a cursar:</label>
+            <br>
+            <select name="disciplinas" id="disc">
+                <option value="PROGRAMAÇÃO WEB">PROGRAMAÇÃO WEB</option>
+                <option value="ESTRUTURA DE DADOS">ESTRUTURA DE DADOS</option>
+                <option value="SISTEMAS OPERACIONAIS">SISTEMAS OPERACIONAIS</option>
+                <option value="MATEMÁTICA">MATEMÁTICA</option>
+            </select>
+            <p>
+                <hr>
+                <br>
+                <input style="text-align: left" type="submit" class="Enviar" value="Enviar">
+                <input type="reset" class="resetar" value="limpar">
+        </form>
+        <p><br><a href="2pagIndex.html" hreflang="pt-br" target="_self" rel="next">Volte à pagina Inicial</a></p>
+    </main>
+
+</body>
+
+</html>
